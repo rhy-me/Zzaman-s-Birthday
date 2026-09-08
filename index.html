@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5eedf" />
+    <title>Tahin's Birthday</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Kalam:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="locked">
+    <div class="intro" id="intro" aria-labelledby="intro-title">
+      <div class="intro__grain"></div>
+      <div class="intro__content">
+        <p class="eyebrow">Birthday Wish from your CSE Boyfriend</p>
+        <h1 id="intro-title">
+          A little something<br /><em>I made for you...</em>
+        </h1>
+        <p class="intro__prompt">I love you....</p>
+        <form class="answer-validation" id="answer-validation">
+          <label class="sr-only" for="answer-input">Your answer</label>
+          <input
+            class="answer-validation__input"
+            id="answer-input"
+            name="answer-input"
+            type="text"
+            autocomplete="off"
+            placeholder="Write your answer..."
+            required
+          />
+          <button class="button button--dark" type="submit">
+            Continue <span aria-hidden="true">&hearts;</span>
+          </button>
+          <p
+            class="answer-validation__error"
+            id="answer-error"
+            role="alert"
+            aria-live="polite"
+          ></p>
+        </form>
+      </div>
+      <p class="intro__footer">
+        For Tahin Zzaman Sanji &middot; October 5, 2026
+      </p>
+    </div>
+
+    <main id="main-content" class="site" aria-hidden="true">
+      <div class="petals" id="petals" aria-hidden="true"></div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
