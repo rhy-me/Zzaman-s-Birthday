@@ -5,6 +5,7 @@
   --sunflower: #f7c331;
   --gold: #bd7d24;
   --ink: #29251f;
+  --line: rgba(73, 59, 45, 0.18);
   --rose: #bd7563;
   --sans: "DM Sans", sans-serif;
   --script: "Kalam", cursive;
@@ -43,6 +44,35 @@ button {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+h1,
+h2,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: var(--serif);
+  font-weight: 500;
+  line-height: 0.98;
+  letter-spacing: 0;
+}
+
+h1 {
+  margin-bottom: 2.25rem;
+  font-size: clamp(3.2rem, 12vw, 9rem);
+}
+
+h2 {
+  margin-bottom: 1.2rem;
+  font-size: clamp(2.5rem, 8vw, 7.5rem);
+}
+
+em {
+  color: var(--gold);
+  font-style: normal;
 }
 
 .intro {
@@ -125,35 +155,6 @@ a {
 
 .intro .eyebrow {
   color: #dac27a;
-}
-
-h1,
-h2,
-p {
-  margin-top: 0;
-}
-
-h1,
-h2 {
-  font-family: var(--serif);
-  font-weight: 500;
-  line-height: 0.98;
-  letter-spacing: 0;
-}
-
-h1 {
-  margin-bottom: 2.25rem;
-  font-size: clamp(3.2rem, 12vw, 7rem);
-}
-
-h2 {
-  margin-bottom: 1.2rem;
-  font-size: clamp(2.5rem, 8vw, 5.5rem);
-}
-
-em {
-  color: var(--gold);
-  font-style: normal;
 }
 
 .intro__prompt {
@@ -466,6 +467,84 @@ a:focus-visible {
 .gt-hole {
   fill: #433629;
   opacity: 0.55;
+}
+
+.section--paper {
+  background: #eee5d1;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 4px,
+      rgba(95, 70, 44, 0.018) 5px
+    );
+}
+
+.section-heading {
+  max-width: 750px;
+  margin-bottom: 3rem;
+}
+
+.section-heading > p:last-child {
+  max-width: 420px;
+  color: #72695c;
+  line-height: 1.6;
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* .timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 9px;
+  width: 1px;
+  background: var(--line);
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  gap: 1.2rem;
+  padding-bottom: 2.2rem;
+}
+
+.timeline__dot {
+  position: relative;
+  z-index: 1;
+  width: 19px;
+  height: 19px;
+  margin-top: 3px;
+  border: 5px solid #eee5d1;
+  border-radius: 50%;
+  background: var(--gold);
+} */
+
+.memories {
+  background: #e6d6bc;
+}
+
+.memory-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  min-height: 350px;
+}
+
+.memory-track {
+  position: relative;
+  width: min(65vw, 430px);
+  height: 350px;
 }
 
 @keyframes intro-rise {
