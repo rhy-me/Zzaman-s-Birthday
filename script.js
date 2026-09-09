@@ -1,9 +1,23 @@
 const intro = document.querySelector("#intro");
+const main = document.querySelector("#main-content");
+const audio = document.querySelector("#guitar-audio");
+const guitarist = document.querySelector("#guitarist");
 
 function startExperience() {
   window.scrollTo(0, 0);
   document.body.classList.remove("locked");
   intro.classList.add("is-hidden");
+  main.setAttribute("aria-hidden", "false");
+  audio.volume = 0.32;
+  audio
+    .play()
+    .then(() => setMusicState(true))
+    .catch(() => setMusicState(false));
+  createPetals();
+  window.setTimeout(
+    () => document.querySelector("#birthday-intro").focus?.(),
+    1000,
+  );
 }
 
 document
