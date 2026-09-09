@@ -1,9 +1,11 @@
 :root {
+  --brown: #493b2d;
   --cream: #f5eedf;
   --ivory: #fffaf0;
   --sunflower: #f7c331;
   --gold: #bd7d24;
   --ink: #29251f;
+  --rose: #bd7563;
   --sans: "DM Sans", sans-serif;
   --script: "Kalam", cursive;
   --serif: "Fraunces", Georgia, serif;
@@ -249,6 +251,223 @@ a:focus-visible {
   letter-spacing: 0.08em;
 }
 
+.site {
+  position: relative;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.topbar {
+  position: absolute;
+  z-index: 5;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 5vw;
+}
+
+.wordmark {
+  color: var(--brown);
+  font-family: var(--serif);
+  font-size: 1.2rem;
+}
+
+.wordmark span {
+  color: var(--gold);
+}
+
+.section {
+  position: relative;
+  min-height: 100svh;
+  padding: 7rem 7vw;
+  display: grid;
+  align-content: center;
+}
+
+.birthday-intro {
+  isolation: isolate;
+  min-height: 100svh;
+  padding-top: 8rem;
+  background:
+    radial-gradient(circle at 70% 30%, #f8e5b2 0, transparent 25%),
+    linear-gradient(140deg, #f7f0e1, #e9ddc0);
+}
+
+.birthday-intro::before {
+  content: "";
+  position: absolute;
+  inset: 18% -20% -30% 45%;
+  z-index: -1;
+  border-radius: 50% 50% 0 0;
+  background: rgba(120, 122, 87, 0.16);
+  transform: rotate(-12deg);
+}
+
+.birthday-intro__copy {
+  max-width: 740px;
+}
+
+.birthday-intro__copy > p:not(.eyebrow) {
+  max-width: 300px;
+  margin-bottom: 2.3rem;
+  color: #675d50;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.tiny-heart,
+.final__message span,
+.letter h2 span {
+  color: var(--rose);
+  font-size: 0.5em;
+  vertical-align: top;
+}
+
+.text-link {
+  display: inline-flex;
+  gap: 0.8rem;
+  align-items: center;
+  color: var(--brown);
+  font-size: 0.78rem;
+  font-weight: 600;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 0.3rem;
+}
+
+.birthday-intro__note {
+  position: absolute;
+  right: 8%;
+  bottom: 14%;
+  width: min(45vw, 270px);
+  padding: 2rem 1.4rem 1.5rem;
+  background: rgba(255, 250, 240, 0.72);
+  box-shadow: 10px 15px 35px rgba(80, 55, 22, 0.12);
+  transform: rotate(5deg);
+}
+
+.note-card__pin {
+  position: absolute;
+  top: -0.35rem;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--rose);
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.15);
+}
+
+.birthday-intro__note p {
+  margin-bottom: 1rem;
+  font-family: var(--script);
+  font-size: 1.1rem;
+  line-height: 1.45;
+}
+
+.note-card__sign {
+  color: var(--gold);
+  font-size: 0.7rem;
+}
+
+.final__petals {
+  max-width: 2rem;
+  color: var(--sunflower);
+  letter-spacing: 1rem;
+  opacity: 0.65;
+}
+
+.petals {
+  position: fixed;
+  z-index: 2;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.guitarist {
+  position: fixed;
+  right: clamp(0.5rem, 3vw, 2rem);
+  bottom: clamp(0.5rem, 3vw, 1.75rem);
+  z-index: 10;
+  width: clamp(72px, 10vw, 100px);
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  transition:
+    transform 0.25s ease,
+    opacity 0.3s ease;
+}
+
+.guitarist:hover,
+.guitarist:focus-visible {
+  transform: translateY(-3px);
+}
+
+.guitarist.is-playing .guitarist-figure {
+  animation: gt-bob 2.6s ease-in-out infinite;
+}
+
+.guitarist-figure {
+  width: 100%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.gt-shadow {
+  fill: rgba(43, 32, 24, 0.16);
+}
+
+.gt-skin {
+  fill: #d8a28a;
+}
+
+.gt-hair {
+  fill: #312a25;
+}
+
+.gt-eye {
+  fill: #493b2d;
+}
+
+.gt-smile {
+  stroke: #493d2b;
+  stroke-width: 2;
+}
+
+.gt-strum-arm {
+  transform-box: fill-box;
+  transform-origin: 84% 55%;
+}
+
+.guitarist.is-playing .gt-strum-arm {
+  animation: gt-strum 0.85s ease-in-out infinite;
+}
+
+.gt-leg {
+  fill: #336974;
+}
+
+.gt-shoe {
+  fill: #242a6f;
+}
+
+.gt-torso {
+  fill: #8f4f50;
+}
+
+.gt-guitar ellipse {
+  fill: #9a5b25;
+}
+
+.gt-hole {
+  fill: #433629;
+  opacity: 0.55;
+}
+
 @keyframes intro-rise {
   from {
     opacity: 0;
@@ -257,5 +476,19 @@ a:focus-visible {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .petals {
+    display: none;
   }
 }

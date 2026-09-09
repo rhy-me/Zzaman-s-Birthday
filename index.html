@@ -13,8 +13,8 @@
     />
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="locked">
-    <div class="intro" id="intro" aria-labelledby="intro-title">
+  <body class="!locked">
+    <!-- <div class="intro" id="intro" aria-labelledby="intro-title">
       <div class="intro__grain"></div>
       <div class="intro__content">
         <p class="eyebrow">Birthday Wish from your CSE Boyfriend</p>
@@ -47,11 +47,265 @@
       <p class="intro__footer">
         For Tahin Zzaman Sanji &middot; October 5, 2026
       </p>
-    </div>
+    </div> -->
 
     <main id="main-content" class="site" aria-hidden="true">
       <div class="petals" id="petals" aria-hidden="true"></div>
+      <button
+      class="guitarist"
+      id="guitarist"
+      type="button"
+      aria-label="Play guitar music"
+      aria-pressed="false"
+      >
+        <span class="notes-layer" aria-hidden="true"
+        ><span>&#9835</span><span>&#9834</span></span>
+        <svg
+        class="guitarist-figure"
+        viewbox="0 0 110 140"
+        xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <ellipse class="gt-shadow" cx="55" cy="132" rx="28" ry="5"/>
+        <rect class="gt-leg" x="37" y="96" width="13" height="32" rx="6.5"/>
+        <rect class="gt-leg" x="59" y="96" width="13" height="32" rx="6.5"/>
+        <rect class="gt-shoe" x="34" y="120" width="17" height="9" rx="4.5"/>
+        <rect class="gt-shoe" x="58" y="120" width="17" height="9" rx="4.5"/>
+        <rect class="gt-torso" x="30" y="57" width="49" height="46" rx="20"/>
+        <rect class="gt-skin" x="48" y="46" width="14" height="15" rx="6"/>
+        <circle class="gt-skin" cx="55" cy="35" r="18.5"/>
+        <path
+        class="gt-hair"
+        d="M36 38c-4-2-5.8-6.7-3.2-10.5-2.1-4.8 1.8-9.8 6.9-9.3 1.2-5.3 7.1-7.6 11.5-4.7 3.8-4.1 10.5-2.9 12.6 2.4 5.1-.9 9.1 3.8 7.5 8.6 4.4 2.7 4.3 9.2.2 12.2l-2.8-4.9c-1.6 3.3-5.8 4.5-8.9 2.5-2.6 3.2-7.6 3.1-10.1-.2-3.3 2.2-7.9.8-9.3-2.9z"/>
+        <line
+          class="gt-straight-arm"
+          x1="31"
+          y1="40"
+          x2="35"
+          y2="68"
+          stroke="#d8a28a"
+          stroke-width="8"
+          stroke-linecap="round"
+        />
+        <g class="gt-guitar">
+          <line
+            x1="55"
+            y1="66"
+            x2="33"
+            y2="40"
+            stroke="#493b2d"
+            stroke-width="6.5"
+            stroke-linecap="round"
+          />
+          <circle cx="33" cy="40" r="6" fill="#b87559"/>
+          <ellipse cx="62" cy="75" rx="13" ry="11" transform="rotate(-30 62 75)"/>
+          <ellipse cx="72" cy="95" rx="19" ry="15.5" transform="rotate(-30 72 95)"/>
+          <circle class="gt-hole" cx="70" cy="88" r="5.2"/>
+        </g>
+        <g class="gt-stum-arm">
+          <path class="gt-skin"
+          d="M74 63c6 2 9 8 8 15-1 6-6 10-6 10l-6-4c2-3 4-7 4-10 0-4-2-7-5-8z"/>        
+        </g>
+        <circle class="gt-eye" cx="49" cy="40" r="1.6"/>
+        <circle class="gt-eye" cx="60" cy="40" r="1.6"/>
+        <path
+            class="gt-smile"
+            d="M50 45c2.5 2 7.5 2 10 0"
+            fill="none"
+            stroke-linecap="round"
+          />
+      </svg>
+      </button>
+      <header class="topbar">
+        <!-- <a
+          class="wordmark"
+          href="#birthday-intro"
+          aria-label="Back to beginning"
+        >
+          for sanji<span>.</span></a
+        > -->
+      </header>
+
+      <section class="birthday-intro section" id="birthday-intro">
+        <div class="birthday-intro__sun" aria-hidden="true"></div>
+        <div class="birthday-intro__copy reveal">
+          <p class="eyebrow">October 5 &middot; a day worth keeping</p>
+          <h2>
+            Happy Birthday,<br /><em>Zzaman Shaheb</em>
+            <span class="tiny-heart" aria-hidden="true">&hearts;</span>
+          </h2>
+          <p>Today is little more special because the world got you.</p>
+          <a class="text-link" href="#story">
+            Start the story <span aria-hidden="true">&darr;</span>
+          </a>
+        </div>
+        <div
+          class="birthday-intro__note note-card reveal"
+          aria-label="A note from Rhyme"
+        >
+          <span class="note-card__pin" aria-hidden="true"></span>
+          <p>For the girl who makes ordinary days feel like golden hour.</p>
+          <span class="note-card__sign">- Rhyme</span>
+        </div>
+      </section>
+
+      <section class="story section section--paper" id="story">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Chapter One</p>
+          <h2>Our little story</h2>
+          <p>Some pages are still waiting for us to write them.</p>
+        </div>
+        <div class="timeline" id="timeline"></div>
+      </section>
+
+      <section class="memories section" id="memories">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Chapter Two</p>
+          <h2>Little moments I keep</h2>
+          <p>
+            Replace these quiet placeholders with the memories that are yours.
+          </p>
+        </div>
+        <div
+          class="memory-slider reveal"
+          aria-roledescription="carousel"
+          aria-label="Memory Photographs"
+        >
+          <button
+            class="slider-button slider-button--prev"
+            id="prev-memory"
+            type="button"
+            aria-label="Previous memory"
+          >
+            &larr;
+          </button>
+          <div class="memory-track" id="memory-track"></div>
+          <button
+            class="slider-button slider-button--next"
+            id="next-memory"
+            type="button"
+            aria-label="Next memory"
+          >
+            &rarr;
+          </button>
+        </div>
+        <div
+          class="slider-dots"
+          id="slider-dots"
+          aria-label="Choose a memory"
+        ></div>
+      </section>
+
+      <section class="cake-intro section section--olive" id="cake-intro">
+        <div class="reveal">
+          <p class="eyebrow">A small pause</p>
+          <h2>
+            But a birthday isn't complete<br />
+            without one more thing...
+          </h2>
+          <span class="cake-intro__mark" aria-hidden="true">&#9733;</span>
+        </div>
+      </section>
+
+      <section class="cake-section section section--cream" id="cake-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Chapter Three</p>
+          <h2>Make a wish</h2>
+          <p>Close your eyes and make a wish...</p>
+        </div>
+        <div
+          class="cake-stage reveal"
+          id="cake-stage"
+          aria-label="A birthday cake with a lit candle"
+        >
+          <div class="cake cake--plate">
+            <div class="cake__plate"></div>
+            <div class="cake__base"></div>
+            <div class="cake__cream cake__cream--one"></div>
+            <div class="cake__top"></div>
+            <div class="cake__cream cake__cream--two"></div>
+            <div class="cake__flower"><i></i><i></i><i></i><i></i><b></b></div>
+            <div class="cake__candle"><div class="flame" id="flame"></div></div>
+          </div>
+          <button class="candle-reset" id="candle-reset" type="button">
+            Want a fresh candle?
+          </button>
+        </div>
+        <div class="wish-actions reveal" id="wish-actions">
+          <button class="button button--gold" id="mic-button" type="button">
+            Blow out the candle?
+          </button>
+          <p class="microcopy" id="mic-status">
+            Your wish is safe here, either way.
+          </p>
+        </div>
+        <div class="wish-success" id="wish-success" aria-live="polite">
+          <strong>Your wish has been made. <span>&hearts;</span></strong>
+          <a class="text-link" href="#letter"
+            >There's one more thing<span>&darr;</span></a
+          >
+        </div>
+      </section>
+
+      <section class="letter-section section" id="letter">
+        <div class="envelop-wrap reveal" id="envelop-wrap">
+          <p class="eyebrow">A final chapter</p>
+          <h2>
+            Open this whenever <br />
+            you are ready...
+          </h2>
+          <button
+            class="envelop"
+            id="envelop"
+            type="button"
+            aria-label="Open your letter"
+          >
+            <span class="envelop__letter"
+              ><span>A letter<br />for you</span></span
+            >
+            <span class="envelop__body"></span>
+            <span class="envelop__flap"></span>
+            <span class="envelop__seal"></span>
+          </button>
+        </div>
+        <article class="letter reveal" id="letter-content" aria-hidden="true">
+          <p class="eyebrow">Written for you</p>
+          <h2>A letter for you <span>&hearts;</span></h2>
+          <div class="letter__body">
+            <p>Dear Zzaman Shaheb,</p>
+            <p>[Personal Message]</p>
+            <p>[Another Para]</p>
+            <p>[Another Para]</p>
+            <p>Happy birthday, my love.</p>
+            <p>[Final Message]</p>
+            <p class="letter__sign">Love,<br />Rhyme</p>
+          </div>
+        </article>
+      </section>
+
+      <section class="final section section--sunset" id="finale">
+        <div class="final__petals" aria-hidden="true">
+          &#10022; &nbsp; &#10022; &nbsp; &#10022;
+        </div>
+        <p class="eyebrow reveal">And one last thing...</p>
+        <div class="final__message reveal">
+          <h2>
+            Happy Birthday,<br /><em>Zzaman Shaheb</em> <span>&hearts;</span>
+          </h2>
+          <p>Thank you for being a part of my story.</p>
+          <p class="final__small">
+            May this next chapter be gentle, bright, and completely yours.
+          </p>
+        </div>
+        <div class="final__signature reveal">
+          made with a little &middot; Rhyme
+        </div>
+      </section>
     </main>
+    <audio
+      id="guitar-audio"
+      src="assets/music/happy_birthday.mp3"
+      loop
+      preload="none"
+    ></audio>
     <script src="script.js"></script>
   </body>
 </html>
