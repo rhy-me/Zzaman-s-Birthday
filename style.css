@@ -387,6 +387,17 @@ a:focus-visible {
   overflow: hidden;
 }
 
+.petal {
+  position: absolute;
+  top: -1.5rem;
+  width: 0.75rem;
+  height: 1rem;
+  border-radius: 70% 25% 70% 25%;
+  background: var(--sunflower);
+  opacity: 0.75;
+  animation: fall linear forwards;
+}
+
 .guitarist {
   position: fixed;
   right: clamp(0.5rem, 3vw, 2rem);
@@ -555,6 +566,13 @@ a:focus-visible {
   to {
     opacity: 1;
     transform: none;
+  }
+}
+
+@keyframes fall {
+  to {
+    transform: translate3d(var(--drift), 110vh, 0) rotate(520deg)
+      scale(var(--scale));
   }
 }
 
