@@ -472,7 +472,7 @@ a:focus-visible {
 }
 
 .guitarist.is-playing .guitarist-figure {
-  animation: gt-bob 2.6s ease-in-out infinite;
+  animation: gt-rhyme 2.6s ease-in-out infinite;
 }
 
 .guitarist-figure {
@@ -510,6 +510,36 @@ a:focus-visible {
 
 .guitarist.is-playing .gt-strum-arm {
   animation: gt-strum 0.85s ease-in-out infinite;
+}
+
+.notes-layer {
+  position: absolute;
+  left: -10px;
+  right: -10px;
+  top: -10px;
+  height: 60%;
+  pointer-events: none;
+}
+
+.notes-layer span {
+  position: absolute;
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--gold);
+  opacity: 0;
+}
+
+.notes-layer span:first-child {
+  left: 35px;
+}
+
+.notes-layer span:last-child {
+  right: 50px;
+  animation-delay: 1.2s;
+}
+
+.guitarist.is-playing .notes-layer span {
+  animation: gt-note-float 3.6s ease-out infinite;
 }
 
 .gt-leg {
@@ -609,6 +639,40 @@ a:focus-visible {
   position: relative;
   width: min(65vw, 430px);
   height: 350px;
+}
+
+@keyframes gt-rhyme {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes gt-strum {
+  0%,
+  100% {
+    transform: rotate(-6deg);
+  }
+  50% {
+    transform: rotate(14deg);
+  }
+}
+
+@keyframes gt-note-float {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) rotate(-6deg);
+  }
+  45% {
+    opacity: 0.85;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--nx, 16px), -46px) rotate(10deg);
+  }
 }
 
 @keyframes intro-rise {
