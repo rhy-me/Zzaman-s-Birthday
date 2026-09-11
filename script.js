@@ -1,3 +1,24 @@
+const timelineItems = [
+  {
+    date: "[Date]",
+    title: "The beginning",
+    image: "[Photo]",
+    description: "[little details]",
+  },
+  {
+    date: "[Date]",
+    title: "A day to remember",
+    image: "[Photo]",
+    description: "[little details]",
+  },
+  {
+    date: "[Date]",
+    title: "Still becoming us",
+    image: "[Photo]",
+    description: "[little details]",
+  },
+];
+
 const intro = document.querySelector("#intro");
 const main = document.querySelector("#main-content");
 const audio = document.querySelector("#guitar-audio");
@@ -88,3 +109,37 @@ function createPetals() {
   for (let index = 0; index < 11; index++) addPetal();
   window.setInterval(addPetal, 1100);
 }
+
+function renderTimeline() {
+  document.querySelector("#timeline").innerHTML = timelineItems
+    .map(
+      (item) => `
+      <article class="timeline__item reveal">
+        <span class="timeline__dot" aria-hidden="true"></span>
+        <div class="timeline__card">
+          <p class="timeline__date">${item.date}</p>
+          <h3>${item.title}</h3>
+          <p>${item.description}</p>
+        </div>
+      </article>`,
+    )
+    .join("");
+}
+
+const observer = new IntersectionObserver(
+  (entries) =>
+    entries.forEach((entry) => {
+      if (
+        entry.target.id === "letter-content" &&
+        entry.target.classList.contains("is-visible")
+      )
+        return;
+      entry.target.classList.toggle("is-visible", entry.isIntersecting);
+    }),
+  { threshold: 0.16 },
+);
+
+renderTimeline();
+document
+  .querySelectorAll(".reveal")
+  .forEach((element) => observer.observe(element));
