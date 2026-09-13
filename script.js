@@ -2,20 +2,44 @@ const timelineItems = [
   {
     date: "[Date]",
     title: "The beginning",
-    image: "[Photo]",
     description: "[little details]",
   },
   {
     date: "[Date]",
     title: "A day to remember",
-    image: "[Photo]",
     description: "[little details]",
   },
   {
     date: "[Date]",
     title: "Still becoming us",
-    image: "[Photo]",
     description: "[little details]",
+  },
+];
+
+const memories = [
+  {
+    date: "[Date]",
+    title: "[Memory Title]",
+    image: "[Photo]",
+    description: "[Memory Description]",
+  },
+  {
+    date: "[Date]",
+    title: "[Memory Title]",
+    image: "[Photo]",
+    description: "[Memory Description]",
+  },
+  {
+    date: "[Date]",
+    title: "[Memory Title]",
+    image: "[Photo]",
+    description: "[Memory Description]",
+  },
+  {
+    date: "[Date]",
+    title: "[Memory Title]",
+    image: "[Photo]",
+    description: "[Memory Description]",
   },
 ];
 
@@ -126,6 +150,68 @@ function renderTimeline() {
     .join("");
 }
 
+let activeMemory = 0;
+function renderMemories() {
+  const track = document.querySelector("#memory-track");
+  track.innerHTML = memories
+    .map(
+      (memory, index) => `
+    <article class="memory-card ${index == 0 ? "is-active" : ""}" aria-label="Memory${index + 1}" aria-hidden="${index !== 0}">
+      <div class="memory-card__image" role="img" aria-label="${memory.image}">${memory.image}</div>
+      <p class="memory-card__caption">${memory.description}</p><small class="memory-card__date">${memory.date}</small>
+    </article>`,
+    )
+    .join("");
+  document.querySelector("#slider-dots").innerHTML = memories
+    .map(
+      (_, index) =>
+        `<button type="button" class="${index === 0 ? "is-active" : ""}" aria-label="Show memory ${index + 1}"></button>`,
+    )
+    .join("");
+  document
+    .querySelectorAll("#slider-dots button")
+    .forEach((dot, index) =>
+      dot.addEventListener("click", () => showMemory(index)),
+    );
+}
+function showMemory(index) {
+  activeMemory = (index + memories.length) % memories.length;
+  document.querySelectorAll(".memory-card").forEach((card, cardIndex) => {
+    card.classList.toggle("is-active", cardIndex === activeMemory);
+    card.setAttribute("aria-hidden", String(cardIndex !== activeMemory));
+  });
+  document
+    .querySelectorAll("#slider-dots button")
+    .forEach((dot, dotIndex) =>
+      dot.classList.toggle("is-active", dotIndex === activeMemory),
+    );
+}
+document
+  .querySelector("#prev-memory")
+  .addEventListener("click", () => showMemory(activeMemory - 1));
+document
+  .querySelector("#next-memory")
+  .addEventListener("click", () => showMemory(activeMemory + 1));
+
+let touchStartX = 0;
+document.querySelector("#memory-track").addEventListener(
+  "touchstart",
+  (event) => {
+    touchStartX = event.changedTouches[0].screenx;
+  },
+  { passive: true },
+);
+document.querySelector("#memory-track").addEventListener(
+  "touchend",
+  (event) => {
+    const distance = event.changedTouches[0].screenx - touchStartX;
+    if (Math.abs(distance) > 40) {
+      showMemory(activeMemory + (distance < 0 ? 1 : -1));
+    }
+  },
+  { passive: true },
+);
+
 const observer = new IntersectionObserver(
   (entries) =>
     entries.forEach((entry) => {
@@ -140,6 +226,7 @@ const observer = new IntersectionObserver(
 );
 
 renderTimeline();
+renderMemories();
 document
   .querySelectorAll(".reveal")
   .forEach((element) => observer.observe(element));
