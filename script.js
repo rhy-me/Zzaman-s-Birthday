@@ -48,10 +48,20 @@ const main = document.querySelector("#main-content");
 const audio = document.querySelector("#guitar-audio");
 const guitarist = document.querySelector("#guitarist");
 
-window.scrollTo(0, 0);
+if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+
+function resetScrollPosition() {
+  const previousScrollBehavior = document.documentElement.style.scrollBehavior;
+  document.documentElement.style.scrollBehavior = "auto";
+  window.scrollTo(0, 0);
+  document.documentElement.style.scrollBehavior = previousScrollBehavior;
+}
+
+resetScrollPosition();
+window.addEventListener("pageshow", resetScrollPosition);
 
 function startExperience() {
-  window.scrollTo(0, 0);
+  resetScrollPosition();
   document.body.classList.remove("locked");
   intro.classList.add("is-hidden");
   main.setAttribute("aria-hidden", "false");
