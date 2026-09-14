@@ -26,19 +26,19 @@ const memories = [
   {
     date: "[Date]",
     title: "[Memory Title]",
-    image: "[Photo]",
+    image: "assets/photos/Us-2.jpg",
     description: "[Memory Description]",
   },
   {
     date: "[Date]",
     title: "[Memory Title]",
-    image: "[Photo]",
+    image: "assets/photos/Us-3.jpg",
     description: "[Memory Description]",
   },
   {
     date: "[Date]",
     title: "[Memory Title]",
-    image: "[Photo]",
+    image: "assets/photos/Us-4.jpg",
     description: "[Memory Description]",
   },
 ];

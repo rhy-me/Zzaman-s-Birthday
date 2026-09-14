@@ -6,6 +6,7 @@
   --gold: #bd7d24;
   --ink: #29251f;
   --line: rgba(73, 59, 45, 0.18);
+  --olive: #3f542d;
   --rose: #bd7563;
   --sage: #708044;
   --sans: "DM Sans", sans-serif;
@@ -247,6 +248,11 @@ a:focus-visible {
   background: var(--ivory);
 }
 
+.button--gold {
+  color: #fffaf0;
+  background: var(--gold);
+}
+
 .intro__footer {
   position: absolute;
   right: 1rem;
@@ -294,6 +300,11 @@ a:focus-visible {
   padding: 7rem 7vw;
   display: grid;
   align-content: center;
+}
+
+.section > * {
+  position: relative;
+  z-index: 1;
 }
 
 .birthday-intro {
@@ -813,6 +824,280 @@ a:focus-visible {
   transform: scale(1.5);
 }
 
+.section--olive {
+  min-height: 80svh;
+  color: #f5eedf;
+  background:
+    radial-gradient(
+      circle at 20% 20%,
+      rgba(242, 182, 50, 0.16),
+      transparent 22%
+    ),
+    radial-gradient(
+      circle at 80% 80%,
+      rgba(242, 182, 50, 0.16),
+      transparent 22%
+    ),
+    var(--olive);
+  text-align: center;
+}
+
+.section--olive .eyebrow {
+  color: #d8c179;
+}
+
+.section--olive h2 {
+  font-size: clamp(2.4rem, 7vw, 5rem);
+}
+
+.cake-intro__mark {
+  display: block;
+  margin-top: 2.5rem;
+  color: var(--sunflower);
+}
+
+.section--cream {
+  background:
+    radial-gradient(
+      circle at 8% 80%,
+      rgba(242, 182, 50, 0.16),
+      transparent 20%
+    ),
+    var(--ivory);
+}
+
+.cake-section {
+  min-height: 100svh;
+  text-align: center;
+}
+
+.cake-stage {
+  position: relative;
+  min-height: 260px;
+  display: grid;
+  place-items: end center;
+  margin: 0 auto;
+}
+
+.cake {
+  position: relative;
+  width: min(76vw, 300px);
+  height: 190px;
+}
+
+.cake > div,
+.candle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.cake__plate {
+  bottom: 0;
+  width: 100%;
+  height: 22px;
+  border-radius: 50%;
+  background: #c5b08a;
+  box-shadow: 0 5px 0 #a99067;
+}
+
+.cake__base {
+  bottom: 15px;
+  width: 82%;
+  height: 78px;
+  border-radius: 10px 10px 23px 23px;
+  background: #b87551;
+  box-shadow: inset 0 12px 0 #c98f6e;
+}
+
+.cake__cream {
+  width: 86%;
+  height: 17px;
+  border-radius: 50%;
+  background: var(--ivory);
+  box-shadow: 0 4px 0 #e5d4b7;
+}
+
+.cake__cream--one {
+  bottom: 84px;
+}
+
+.cake__top {
+  bottom: 96px;
+  width: 70%;
+  height: 55px;
+  border-radius: 10px 10px 17px 17px;
+  background: #d3916f;
+}
+
+.cake__cream--two {
+  bottom: 145px;
+  width: 74%;
+}
+
+.cake__flower {
+  bottom: 142px;
+  width: 30px;
+  height: 30px;
+}
+
+.cake__flower i {
+  position: absolute;
+  inset: 8px 12px;
+  border-radius: 50%;
+  background: #d49d23;
+  transform-origin: 50% 7px;
+}
+
+.cake__flower i:nth-child(1) {
+  transform: rotate(0deg) translateY(-8px);
+}
+
+.cake__flower i:nth-child(2) {
+  transform: rotate(90deg) translateY(-8px);
+}
+
+.cake__flower i:nth-child(3) {
+  transform: rotate(180deg) translateY(-8px);
+}
+
+.cake__flower i:nth-child(4) {
+  transform: rotate(270deg) translateY(-8px);
+}
+
+.cake__flower b {
+  position: absolute;
+  inset: 11px;
+  z-index: 1;
+  border-radius: 50%;
+  background: #8b6429;
+}
+
+.cake__candle {
+  bottom: 156px;
+  width: 11px;
+  height: 42px;
+  border-radius: 3px;
+  background: repeating-linear-gradient(45deg, #c2785c 0 4px, #f7dba2 4px 8px);
+}
+
+.flame {
+  position: absolute;
+  top: -21px;
+  left: 50%;
+  width: 15px;
+  height: 23px;
+  border-radius: 50% 50% 50% 10%;
+  background: #e4a52c;
+  box-shadow: 0 0 22px 8px rgba(228, 165, 44, 0.35);
+  transform: translateX(-50%) rotate(45deg);
+  animation: flicker 0.7s infinite alternate;
+}
+
+.candle-reset {
+  position: absolute;
+  top: 44%;
+  left: calc(50% + min(29vw, 150px));
+  max-width: 135px;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(189, 125, 36, 0.25);
+  border-radius: 48% 52% 50% 45%;
+  color: var(--brown);
+  background: #f4e4bf;
+  box-shadow: 0 8px 18px rgba(73, 59, 45, 0.12);
+  font-family: var(--script);
+  font-size: 0.95rem;
+  line-height: 1.1;
+  transform: rotate(4deg);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.candle-reset::after {
+  content: "";
+  position: absolute;
+  bottom: 2px;
+  left: -8px;
+  width: 18px;
+  height: 16px;
+  background: #f4e4bf;
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+.candle-reset:hover,
+.candle-reset:focus-visible {
+  transform: rotate(1deg) translateY(-3px);
+  box-shadow: 0 12px 22px rgba(73, 59, 45, 0.18);
+}
+
+.cake > .cake__plate,
+.cake > .cake__base,
+.cake > .cake__cream,
+.cake > .cake__top,
+.cake > .cake__flower,
+.cake > .cake__candle {
+  opacity: 0;
+  animation: cake-build 0.7s both;
+}
+.cake > .cake__plate {
+  animation-delay: 0.2s;
+}
+.cake > .cake__base {
+  animation-delay: 0.55s;
+}
+.cake > .cake__cream--one {
+  animation-delay: 0.85s;
+}
+.cake > .cake__top {
+  animation-delay: 1.15s;
+}
+.cake > .cake__cream--two {
+  animation-delay: 1.45s;
+}
+.cake > .cake__flower {
+  animation-delay: 1.75s;
+}
+.cake > .cake__candle {
+  animation-delay: 2.05s;
+}
+
+.wish-actions {
+  margin-top: 2rem;
+}
+
+.wish-actions button {
+  margin: 0.25rem;
+}
+
+.microcopy {
+  margin: 0.8rem 0 0;
+  color: #8c8170;
+  font-size: 0.75rem;
+}
+
+.wish-success {
+  display: none;
+  margin-top: 2rem;
+}
+
+.wish-success.is-visible {
+  display: block;
+  animation: intro-rise 0.7s both;
+}
+
+.wish-success strong {
+  display: block;
+  margin-bottom: 1.5rem;
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+.wish-success strong span {
+  color: var(--rose);
+}
+
 @keyframes gt-rhyme {
   0%,
   100% {
@@ -865,6 +1150,23 @@ a:focus-visible {
   }
 }
 
+@keyframes flicker {
+  to {
+    transform: translateX(-50%) rotate(39deg) scale(0.88);
+  }
+}
+
+@keyframes cake-build {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 25px) scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0) scale(1);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -885,6 +1187,15 @@ a:focus-visible {
     right: -7%;
     width: 145px;
     opacity: 0.68;
+  }
+
+  .candle-reset {
+    top: 8%;
+    left: auto;
+    right: 4%;
+    max-width: 120px;
+    padding: 0.7rem 0.8rem;
+    font-size: 0.85rem;
   }
 }
 
