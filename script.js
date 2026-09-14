@@ -20,7 +20,7 @@ const memories = [
   {
     date: "[Date]",
     title: "[Memory Title]",
-    image: "[Photo]",
+    image: "assets/photos/Us-1.jpg",
     description: "[Memory Description]",
   },
   {
@@ -157,7 +157,9 @@ function renderMemories() {
     .map(
       (memory, index) => `
     <article class="memory-card ${index == 0 ? "is-active" : ""}" aria-label="Memory${index + 1}" aria-hidden="${index !== 0}">
-      <div class="memory-card__image" role="img" aria-label="${memory.image}">${memory.image}</div>
+      <div class="memory-card__image">
+        <img src="${memory.image}" alt="${memory.title}" />
+      </div>
       <p class="memory-card__caption">${memory.description}</p><small class="memory-card__date">${memory.date}</small>
     </article>`,
     )
