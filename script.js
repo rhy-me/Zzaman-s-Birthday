@@ -237,6 +237,26 @@ const observer = new IntersectionObserver(
   { threshold: 0.16 },
 );
 
+const cakeStage = document.getElementById("cake-stage");
+const cake = cakeStage.querySelector(".cake");
+
+const cakeObserver = new IntersectionObserver(
+  (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        cake.classList.add("cake-build-active");
+
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  {
+    threshold: 0.3,
+  },
+);
+
+cakeObserver.observe(cakeStage);
+
 renderTimeline();
 renderMemories();
 document

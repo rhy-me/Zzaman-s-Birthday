@@ -1031,6 +1031,7 @@ a:focus-visible {
   box-shadow: 0 12px 22px rgba(73, 59, 45, 0.18);
 }
 
+/* Cake pieces are hidden by default */
 .cake > .cake__plate,
 .cake > .cake__base,
 .cake > .cake__cream,
@@ -1038,27 +1039,42 @@ a:focus-visible {
 .cake > .cake__flower,
 .cake > .cake__candle {
   opacity: 0;
+}
+
+.cake-build-active > .cake__plate,
+.cake-build-active > .cake__base,
+.cake-build-active > .cake__cream,
+.cake-build-active > .cake__top,
+.cake-build-active > .cake__flower,
+.cake-build-active > .cake__candle {
   animation: cake-build 0.7s both;
 }
-.cake > .cake__plate {
+
+.cake-build-active > .cake__plate {
   animation-delay: 0.2s;
 }
-.cake > .cake__base {
+
+.cake-build-active > .cake__base {
   animation-delay: 0.55s;
 }
-.cake > .cake__cream--one {
+
+.cake-build-active > .cake__cream--one {
   animation-delay: 0.85s;
 }
-.cake > .cake__top {
+
+.cake-build-active > .cake__top {
   animation-delay: 1.15s;
 }
-.cake > .cake__cream--two {
+
+.cake-build-active > .cake__cream--two {
   animation-delay: 1.45s;
 }
-.cake > .cake__flower {
+
+.cake-build-active > .cake__flower {
   animation-delay: 1.75s;
 }
-.cake > .cake__candle {
+
+.cake-build-active > .cake__candle {
   animation-delay: 2.05s;
 }
 
