@@ -209,14 +209,14 @@ let touchStartX = 0;
 document.querySelector("#memory-track").addEventListener(
   "touchstart",
   (event) => {
-    touchStartX = event.changedTouches[0].screenx;
+    touchStartX = event.changedTouches[0].screenX;
   },
   { passive: true },
 );
 document.querySelector("#memory-track").addEventListener(
   "touchend",
   (event) => {
-    const distance = event.changedTouches[0].screenx - touchStartX;
+    const distance = event.changedTouches[0].screenX - touchStartX;
     if (Math.abs(distance) > 40) {
       showMemory(activeMemory + (distance < 0 ? 1 : -1));
     }
@@ -236,6 +236,12 @@ const observer = new IntersectionObserver(
     }),
   { threshold: 0.16 },
 );
+
+renderTimeline();
+renderMemories();
+document
+  .querySelectorAll(".reveal")
+  .forEach((element) => observer.observe(element));
 
 const cakeStage = document.getElementById("cake-stage");
 const cake = cakeStage.querySelector(".cake");
@@ -257,8 +263,58 @@ const cakeObserver = new IntersectionObserver(
 
 cakeObserver.observe(cakeStage);
 
-renderTimeline();
-renderMemories();
-document
-  .querySelectorAll(".reveal")
-  .forEach((element) => observer.observe(element));
+function blowOutCandle() {
+  document.querySelector("#flame").classList.add("is-out");
+  document.querySelector("#flame").style.display = "none";
+  document.querySelector("#wish-actions").style.display = "none";
+  document.querySelector("#wish-success").classList.add("is-visible");
+}
+
+function resetCandle() {
+  const flame = document.querySelector("#flame");
+  flame.classList.remove("is-out");
+  flame.style.display = "";
+  document.querySelector("#wish-actions").style.display = "";
+  document.querySelector("#wish-success").classList.remove("is-visible");
+  document.querySelector("#mic-status").textContent =
+    "Your wish is safe here, either way.";
+}
+
+document.querySelector("#candle-reset").addEventListener("click", resetCandle);
+document.querySelector("#mic-button").addEventListener("click", async () => {
+  const status = document.querySelector("#mic-status");
+  status.textContent = "Listening for a little breath...";
+  try {
+    const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    const context = new AudioContext();
+    const analyser = context.createAnalyser();
+    const source = context.createMediaStreamSource(stream);
+    source.connect(analyser);
+    analyser.fftSize = 256;
+    const data = new Uint8Array(analyser.frequencyBinCount);
+    const listen = () => {
+      analyser.getByteFrequencyData(data);
+      const volume = data.reduce((sum, value) => sum + value, 0) / data.length;
+      if (volume > 42) {
+        stream.getTracks().forEach((track) => track.stop());
+        context.close();
+        blowOutCandle();
+      } else if (document.querySelector("#flame").style.display !== "none")
+        requestAnimationFrame(listen);
+    };
+    listen();
+  } catch {
+    status.textContent = "No problem. Use the button above to make the wish.";
+  }
+});
+
+document.querySelector("#envelope").addEventListener("click", () => {
+  const envelope = document.querySelector("#envelope");
+  envelope.classList.add("is-open");
+  window.setTimeout(() => {
+    document.querySelector("#letter-content").classList.add("is-visible");
+    document
+      .querySelector("#letter-content")
+      .setAttribute("aria-hidden", "false");
+  }, 650);
+});
