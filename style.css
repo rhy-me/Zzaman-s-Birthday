@@ -831,13 +831,73 @@ a:focus-visible {
 }
 
 .slider-button {
-  width: 38px;
-  height: 38px;
+  position: relative;
+  width: clamp(2.45rem, 5vw, 2.8rem);
+  height: clamp(2.45rem, 5vw, 2.8rem);
   flex: 0 0 auto;
-  border: 1px solid var(--line);
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(73, 59, 45, 0.22);
   border-radius: 50%;
   color: var(--brown);
-  background: rgba(255, 250, 240, 0.55);
+  background: rgba(255, 250, 240, 0.72);
+  box-shadow:
+    0 4px 10px rgba(73, 59, 45, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  transition:
+    transform 0.22s ease,
+    color 0.22s ease,
+    background 0.22s ease,
+    border-color 0.22s ease,
+    box-shadow 0.22s ease;
+}
+
+.slider-button::before {
+  content: "";
+  width: 0.52rem;
+  height: 0.52rem;
+  border-top: 2px solid currentColor;
+  border-right: 2px solid currentColor;
+  transform: rotate(-135deg);
+  transition: transform 0.22s ease;
+}
+
+#next-memory::before {
+  transform: rotate(45deg);
+}
+
+.slider-button:hover {
+  border-color: rgba(189, 125, 36, 0.58);
+  color: var(--gold);
+  background: rgba(255, 250, 240, 0.94);
+  box-shadow:
+    0 7px 16px rgba(73, 59, 45, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transform: translateY(-2px);
+}
+
+.slider-button:hover::before {
+  transform: rotate(-135deg) translateX(-1px);
+}
+
+#next-memory:hover::before {
+  transform: rotate(45deg) translateX(1px);
+}
+
+.slider-button:active {
+  transform: translateY(0) scale(0.94);
+  background: rgba(244, 228, 191, 0.92);
+  box-shadow:
+    0 2px 6px rgba(73, 59, 45, 0.1),
+    inset 0 1px 3px rgba(73, 59, 45, 0.1);
+}
+
+.slider-button:focus-visible {
+  outline: 3px solid rgba(189, 125, 36, 0.42);
+  outline-offset: 3px;
 }
 
 .slider-dots {
