@@ -727,6 +727,14 @@ a:focus-visible {
   transform: none;
 }
 
+.birthday-intro__note.reveal {
+  transform: translateY(26px) rotate(5deg);
+}
+
+.birthday-intro__note.reveal.is-visible {
+  transform: rotate(5deg);
+}
+
 .memories {
   background: #e4dcae;
 }
@@ -1501,6 +1509,18 @@ a:focus-visible {
     max-width: 120px;
     padding: 0.7rem 0.8rem;
     font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .birthday-intro__note {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    justify-self: end;
+    width: min(78vw, 300px);
+    margin-top: 1.5rem;
+    padding: 1.5rem 1.3rem 1.2rem;
   }
 }
 
