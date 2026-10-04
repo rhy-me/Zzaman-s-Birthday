@@ -47,21 +47,21 @@ const memories = [
   {
     date: "12-10-2025",
     title: "Our First Meet",
-    image: "assets/photos/Our-First-Meet.jpg",
+    image: "assets/photos/Our-First-Meet.JPG",
     description:
       "After a long wait, the day we finally met — and it was everything I had imagined and more.",
   },
   {
     date: "27-10-2025",
     title: "Our First Movie Date",
-    image: "assets/photos/First-Movie-Date.jpg",
+    image: "assets/photos/First-Movie-Date.JPG",
     description:
       "Our first movie date, where another ordinary day became something worth remembering.",
   },
   {
     date: "02-11-2025",
     title: "The First Time I Held Your Hand",
-    image: "assets/photos/First-Holding-Hands.jpg",
+    image: "assets/photos/First-Holding-Hands.JPG",
     description:
       "The first time I held your hand — a small moment that meant so much to me. Holding your hand",
   },
@@ -75,27 +75,27 @@ const memories = [
   {
     date: "21-11-2025",
     title: "A Little Moment",
-    image: "assets/photos/Ussss.jpg",
+    image: "assets/photos/Ussss.JPG",
     description:
       "Nothing extraordinary — one of my most favorite little moments with you, just being together.",
   },
   {
     date: "21-12-2025",
     title: "Our Signature Pose",
-    image: "assets/photos/Our-Signature-Pos-3.jpg",
+    image: "assets/photos/Our-Signature-Pos-3.JPG",
     description: "One pose, two people, and a memory worth keeping forever.",
   },
   {
     date: "07-12-2025",
     title: "Our First Monthversary",
-    image: "assets/photos/First-Monthversary.jpg",
+    image: "assets/photos/First-Monthversary.JPG",
     description:
       "Our first month together — and the beginning of so many more memories.",
   },
   {
     date: "09-12-2025",
     title: "Our Favorite",
-    image: "assets/photos/Our-Fav.jpg",
+    image: "assets/photos/Our-Fav.JPG",
     description:
       "When we are together, laughing, smiling, and making memories, I feel like the luckiest person in the world.",
   },
@@ -109,27 +109,27 @@ const memories = [
   {
     date: "12-04-2026",
     title: "The Day You Met My Mother",
-    image: "assets/photos/First-Meet-With-Ma.jpg",
+    image: "assets/photos/First-Meet-With-Ma.JPG",
     description:
       "The day you met my mother and became an even more special part of my life.",
   },
   {
     date: "11-04-2026",
     title: "You in a Saree",
-    image: "assets/photos/First-Saree-With-Me-1.jpg",
+    image: "assets/photos/First-Saree-With-Me-1.JPG",
     description:
       "The first time I saw you in a saree on one of our dates. You looked unforgettable.",
   },
   {
     date: "13-04-2026",
     title: "Our Coffee Date",
-    image: "assets/photos/Our-Coffee-Date.jpg",
+    image: "assets/photos/Our-Coffee-Date.JPG",
     description: "Coffee tastes a little better when I'm sharing it with you.",
   },
   {
     date: "21-05-2026",
     title: "Made for Each Other",
-    image: "assets/photos/Made-For-EachOther.jpg",
+    image: "assets/photos/Made-For-EachOther.JPG",
     description: "Some pictures don't need a story. They just feel like us.",
   },
   {
@@ -142,27 +142,27 @@ const memories = [
   {
     date: "09-06-2026",
     title: "Our Signature Pose",
-    image: "assets/photos/Our-Signature-Pos.jpg",
+    image: "assets/photos/Our-Signature-Pos.JPG",
     description:
       "Because apparently we found a pose that we just can't stop doing.",
   },
   {
     date: "30-06-2026",
     title: "Us, Just Being Us",
-    image: "assets/photos/Brasil-Couple.jpg",
+    image: "assets/photos/Brasil-Couple.JPG",
     description: "Fate brought two Brasil fan together.",
   },
   {
     date: "02-08-2026",
     title: "Another Movie Memory",
-    image: "assets/photos/Spiderman-movie2.jpg",
+    image: "assets/photos/Spiderman-movie2.JPG",
     description:
       "Two spiderman fans, a movie, and another little memory to keep.",
   },
   {
     date: "13-09-2026",
     title: "Another Signature Moment",
-    image: "assets/photos/Our-Signature-Pos-2.jpg",
+    image: "assets/photos/Our-Signature-Pos-2.JPG",
     description: "At this point, I think this pose officially belongs to us.",
   },
   {
@@ -174,14 +174,14 @@ const memories = [
   {
     date: "23-09-2026",
     title: "Just You and Me",
-    image: "assets/photos/Usss.jpg",
+    image: "assets/photos/Usss.JPG",
     description:
       "One more little moment with the girl who makes my ordinary days feel extraordinary.",
   },
   {
     date: "01-10-2026",
     title: "A Year Later",
-    image: "assets/photos/One-Year-Later-At-The-Same-Meeting.jpg",
+    image: "assets/photos/One-Year-Later-At-The-Same-Meeting.JPG",
     description:
       "A moment that reminded me how far we've come since the beginning of our story. Started at the same coffee shop where we first met, and now a year later, still making memories together.",
   },
