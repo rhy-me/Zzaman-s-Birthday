@@ -16,6 +16,7 @@
 
 html {
   scroll-behavior: smooth;
+  touch-action: manipulation;
 }
 
 body {
@@ -744,6 +745,7 @@ a:focus-visible {
   width: min(65vw, 430px);
   aspect-ratio: 0.85;
   height: auto;
+  margin-bottom: 1.5rem;
 }
 
 .memory-card {
