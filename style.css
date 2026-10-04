@@ -418,7 +418,7 @@ a:focus-visible {
 }
 .section--cream::before {
   top: 5%;
-  left: 15%;
+  left: -5%;
   transform: scale(0.9);
 }
 .letter-section::before {
