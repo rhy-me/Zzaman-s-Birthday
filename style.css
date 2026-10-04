@@ -742,7 +742,7 @@ a:focus-visible {
 .memory-track {
   position: relative;
   width: min(65vw, 430px);
-  aspect-ratio: 1;
+  aspect-ratio: 0.85;
   height: auto;
 }
 
@@ -906,7 +906,7 @@ a:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
   margin-top: clamp(1rem, 2.5vw, 1.2rem);
 }
 

@@ -1,45 +1,189 @@
 const timelineItems = [
   {
-    date: "[Date]",
+    date: "17-02-2025",
     title: "The beginning",
-    description: "[little details]",
+    description:
+      "The day you entered my social life and everything slowly started changing.",
   },
   {
-    date: "[Date]",
-    title: "A day to remember",
-    description: "[little details]",
+    date: "12-10-2025",
+    title: "The day we met",
+    description:
+      "The first time I finally got to meet the girl who had already become special to me.",
   },
   {
-    date: "[Date]",
-    title: "Still becoming us",
-    description: "[little details]",
+    date: "15-11-2025",
+    title: "Our first official date",
+    description:
+      "Our first official date, another movie, and another beautiful memory added to our story.",
+  },
+  {
+    date: "19-11-2025",
+    title: "Three little words",
+    description:
+      "The first time you spelled “I love you Rhyme” — words I will never forget.",
+  },
+  {
+    date: "12-04-2026",
+    title: "A special introduction",
+    description:
+      "The day you met my mother and became an even more special part of my life.",
+  },
+  {
+    date: "07-05-2026",
+    title: "Half a year of us",
+    description:
+      "The day we celebrated six beautiful months of our relationship and everything we had become together.",
+  },
+  {
+    date: "05-10-2026",
+    title: "Your special day",
+    description:
+      "The birthday of the only special girl of my life — and another chapter of our story begins.",
   },
 ];
 
 const memories = [
   {
-    date: "[Date]",
-    title: "[Memory Title]",
+    date: "12-10-2025",
+    title: "Our First Meet",
+    image: "assets/photos/Our-First-Meet.jpg",
+    description:
+      "After a long wait, the day we finally met — and it was everything I had imagined and more.",
+  },
+  {
+    date: "27-10-2025",
+    title: "Our First Movie Date",
+    image: "assets/photos/First-Movie-Date.jpg",
+    description:
+      "Our first movie date, where another ordinary day became something worth remembering.",
+  },
+  {
+    date: "02-11-2025",
+    title: "The First Time I Held Your Hand",
+    image: "assets/photos/First-Holding-Hands.jpg",
+    description:
+      "The first time I held your hand — a small moment that meant so much to me. Holding your hand",
+  },
+  {
+    date: "15-11-2025",
+    title: "Our First Official Date",
+    image: "assets/photos/First-Official-Date.jpg",
+    description:
+      "Our first official date — another beautiful chapter in our little story.",
+  },
+  {
+    date: "21-11-2025",
+    title: "A Little Moment",
+    image: "assets/photos/Ussss.jpg",
+    description:
+      "Nothing extraordinary — one of my most favorite little moments with you, just being together.",
+  },
+  {
+    date: "21-12-2025",
+    title: "Our Signature Pose",
+    image: "assets/photos/Our-Signature-Pos-3.jpg",
+    description: "One pose, two people, and a memory worth keeping forever.",
+  },
+  {
+    date: "07-12-2025",
+    title: "Our First Monthversary",
+    image: "assets/photos/First-Monthversary.jpg",
+    description:
+      "Our first month together — and the beginning of so many more memories.",
+  },
+  {
+    date: "09-12-2025",
+    title: "Our Favorite",
+    image: "assets/photos/Our-Fav.jpg",
+    description:
+      "When we are together, laughing, smiling, and making memories, I feel like the luckiest person in the world.",
+  },
+  {
+    date: "27-03-2026",
+    title: "Our First Eid",
+    image: "assets/photos/First-Eid-1.jpeg",
+    description:
+      "Celebrating Eid together and making another little piece of our story.",
+  },
+  {
+    date: "12-04-2026",
+    title: "The Day You Met My Mother",
+    image: "assets/photos/First-Meet-With-Ma.jpg",
+    description:
+      "The day you met my mother and became an even more special part of my life.",
+  },
+  {
+    date: "11-04-2026",
+    title: "You in a Saree",
+    image: "assets/photos/First-Saree-With-Me-1.jpg",
+    description:
+      "The first time I saw you in a saree on one of our dates. You looked unforgettable.",
+  },
+  {
+    date: "13-04-2026",
+    title: "Our Coffee Date",
+    image: "assets/photos/Our-Coffee-Date.jpg",
+    description: "Coffee tastes a little better when I'm sharing it with you.",
+  },
+  {
+    date: "21-05-2026",
+    title: "Made for Each Other",
+    image: "assets/photos/Made-For-EachOther.jpg",
+    description: "Some pictures don't need a story. They just feel like us.",
+  },
+  {
+    date: "07-05-2026",
+    title: "Half a Year of Us",
+    image: "assets/photos/Half-Year-Anniversary.jpeg",
+    description:
+      "Six months of love, laughter, memories, and becoming more of an us every day.",
+  },
+  {
+    date: "09-06-2026",
+    title: "Our Signature Pose",
+    image: "assets/photos/Our-Signature-Pos.jpg",
+    description:
+      "Because apparently we found a pose that we just can't stop doing.",
+  },
+  {
+    date: "30-06-2026",
+    title: "Us, Just Being Us",
+    image: "assets/photos/Brasil-Couple.jpg",
+    description: "Fate brought two Brasil fan together.",
+  },
+  {
+    date: "02-08-2026",
+    title: "Another Movie Memory",
+    image: "assets/photos/Spiderman-movie2.jpg",
+    description:
+      "Two spiderman fans, a movie, and another little memory to keep.",
+  },
+  {
+    date: "13-09-2026",
+    title: "Another Signature Moment",
+    image: "assets/photos/Our-Signature-Pos-2.jpg",
+    description: "At this point, I think this pose officially belongs to us.",
+  },
+  {
+    date: "13-09-2026",
+    title: "Us Again",
     image: "assets/photos/Us-1.jpg",
-    description: "[Memory Description]",
+    description: "Just us. My favorite kind of ordinary",
   },
   {
-    date: "[Date]",
-    title: "[Memory Title]",
-    image: "assets/photos/Us-2.jpg",
-    description: "[Memory Description]",
+    date: "23-09-2026",
+    title: "Just You and Me",
+    image: "assets/photos/Usss.jpg",
+    description:
+      "One more little moment with the girl who makes my ordinary days feel extraordinary.",
   },
   {
-    date: "[Date]",
-    title: "[Memory Title]",
-    image: "assets/photos/Us-3.jpg",
-    description: "[Memory Description]",
-  },
-  {
-    date: "[Date]",
-    title: "[Memory Title]",
-    image: "assets/photos/Us-4.jpg",
-    description: "[Memory Description]",
+    date: "01-10-2026",
+    title: "A Year Later",
+    image: "assets/photos/One-Year-Later-At-The-Same-Meeting.jpg",
+    description:
+      "A moment that reminded me how far we've come since the beginning of our story. Started at the same coffee shop where we first met, and now a year later, still making memories together.",
   },
 ];
 
